@@ -3,6 +3,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 public class App {
@@ -11,6 +13,8 @@ public class App {
 
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate date = LocalDate.parse("14/12/2000", fmt);
+
+        SellerDao sellerDao = DaoFactory.createSellerDao();
 
         Seller seller = new Seller(21, "bob", "bob@gmail.com", date, 3000.0, obj);
         
